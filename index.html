@@ -4,44 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-      <div class="inputs">
-          <form id="myForm">
-              <div>
-                  <label for="author">Author</label>
-                  <input type="text" id="author" name="author" required>
-                </div>
-                <div>
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" required>
-                </div>
-                <div>
-                    <label for="pages">Number of Pages</label>
-                    <input type="text" id="pages" name="pages" required>
-                </div>
-                <div>
-                    <div>Status</div>
+      <div class="left">
+        <div class="inputs">
+            <form id="myForm">
                     <div>
-                        <input type="radio" id="read" name="drone" value="Read">
-                        <label for="read">Read</label>
+                      <label for="author">AUTHOR</label>
+                      <input type="text" id="author" name="author" required>
                     </div>
                     <div>
+                      <label for="title">TITLE</label>
+                      <input type="text" id="title" name="title" required>
+                    </div>
+                    <div>
+                      <label for="pages">NUMBER OF PAGES</label>
+                      <input type="number" id="pages" name="pages" max="9999" required>
+                    </div>
+                    <div>
+                      <label>STATUS</label>
+                      <div>
+                        <input type="radio" id="read" name="drone" value="Read">
+                       <label for="read">Read</label>
+                      </div>
+                      <div>
                         <input type="radio" id="notRead" name="drone" value="Not Read">
                         <label for="notRead">Not Read</label>
-                    </div>
+                      </div>
                 </div>
             </form>
         </div>
-
+  
         <div class="buttons">
           <button class="display">Display Your Library</button>
           <button class="create">Create New Book Data</button>
         </div>
+      </div>
         
     <div class="libraryContainer">
 
