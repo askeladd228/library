@@ -7,7 +7,7 @@ function Book(author, title, pages, read) {
   this.Status = read;
 };
 
-Book.prototype.readStatus = function () {
+Book.prototype.changeReadStatus = function () {
   if (this.Status == 'Read') {
     this.Status = 'Not Read'
   } else this.Status = 'Read'
@@ -31,9 +31,6 @@ function displayLibrary() {
   libraryContainer.replaceChildren();
 
   myLibrary.forEach(object => {
-    function callReadStatus() {
-      object.readStatus();
-    }
     let bookContainer = document.createElement('div');
     let buttonRemove = document.createElement('button');
     let buttonToggle = document.createElement('button');
@@ -51,7 +48,7 @@ function displayLibrary() {
 
     for (const key in object) {
       let book = document.createElement('div');
-      if (key == 'readStatus') continue;
+      if (key == 'changeReadStatus') continue;
       if (key == 'Status') {
         book.textContent = `${key}: ${object[key]}`;
         bookContainer.appendChild(book);
@@ -68,7 +65,9 @@ function displayLibrary() {
           } else book.textContent = 'Status: Not Read';
         });
 
-        buttonToggle.addEventListener('click', callReadStatus);
+        buttonToggle.addEventListener('click', () => {
+          object.changeReadStatus();
+        });
       } else {
           book.textContent = `${key}: ${object[key]}`;
           bookContainer.appendChild(book);
