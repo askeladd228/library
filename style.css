@@ -33,7 +33,7 @@ html,body {
 }
 
 .display,
-.create,
+.create, 
 .toggle {
   outline: none;
   border: 2px solid black;
@@ -41,9 +41,13 @@ html,body {
   border-radius: 5px;
   cursor: pointer;
   transition: 500ms;
+  box-shadow: -2px 2px black;
+}
+
+.display,
+.create {
   width: 100px;
   height: 50px;
-  box-shadow: -2px 2px black;
 }
 
 
@@ -54,6 +58,7 @@ html,body {
   background-color: white;
   box-shadow: -5px 5px;
   transition: 500ms;
+  position: relative;
 }
 
 form {
@@ -93,7 +98,8 @@ form, .buttons {
 
 .display:hover,
 .create:hover,
-.toggle:hover {
+.toggle:hover,
+.remove:hover {
   background-color: black;
   color: white;
   transform: scale(1, 1);
@@ -108,3 +114,27 @@ label {
   margin-top: 10px;
   font-weight: 600;
 }
+
+.toggle {
+  width: 100px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.remove {
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid black;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.bookContainer > div,
+.bookContainer > button {
+  margin-bottom: 5px;
+}
+
